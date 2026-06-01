@@ -14,6 +14,14 @@ import DailyActions from '@/pages/DailyActions';
 import MonthlyDiagnostic from '@/pages/MonthlyDiagnostic';
 import MonthlySummary from '@/pages/MonthlySummary';
 import CalendarView from '@/pages/CalendarView';
+import Onboarding from '@/pages/Onboarding';
+import PlanSpirituel from '@/pages/plans/PlanSpirituel';
+import PlanFinancier from '@/pages/plans/PlanFinancier';
+import PlanEmotionnel from '@/pages/plans/PlanEmotionnel';
+import PlanTemps from '@/pages/plans/PlanTemps';
+import PlanTemple from '@/pages/plans/PlanTemple';
+import PlanRelationnel from '@/pages/plans/PlanRelationnel';
+import IdentiteRoyale from '@/pages/profil/IdentiteRoyale';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -38,6 +46,17 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
       <Route path="/" element={<Dashboard />} />
+      <Route path="/onboarding" element={<Onboarding />} />
+      {/* Plans de Transformation */}
+      <Route path="/plan/spirituel" element={<PlanSpirituel />} />
+      <Route path="/plan/financier" element={<PlanFinancier />} />
+      <Route path="/plan/emotionnel" element={<PlanEmotionnel />} />
+      <Route path="/plan/temps" element={<PlanTemps />} />
+      <Route path="/plan/temple" element={<PlanTemple />} />
+      <Route path="/plan/relationnel" element={<PlanRelationnel />} />
+      {/* Profil */}
+      <Route path="/profil/identite" element={<IdentiteRoyale />} />
+      {/* Legacy routes */}
       <Route path="/goals" element={<Goals />} />
       <Route path="/journal" element={<DailyJournal />} />
       <Route path="/actions" element={<DailyActions />} />

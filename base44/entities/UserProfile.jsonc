@@ -1,0 +1,99 @@
+{
+  "name": "UserProfile",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "ID de l'utilisateur Base44 li\u00e9"
+    },
+    "ics_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Indice de Coh\u00e9rence Souveraine (ICS) \u2014 Score global en %"
+    },
+    "user_level": {
+      "type": "string",
+      "enum": [
+        "DEBUTANT_RESTAURATION",
+        "INTERMEDIAIRE_STRUCTURE",
+        "SOUVERAIN_CONQUETE"
+      ],
+      "default": "DEBUTANT_RESTAURATION",
+      "description": "Niveau de gouvernance de l'utilisateur"
+    },
+    "honor_switch": {
+      "type": "boolean",
+      "default": false,
+      "description": "Commutateur d'Honneur \u2014 visibilit\u00e9 des plans par le corps pastoral"
+    },
+    "dynasty_theme": {
+      "type": "string",
+      "enum": [
+        "NOIR_ABSOLU_OR_SACRE",
+        "BLEU_IMPERIAL",
+        "POURPRE_ROYAL"
+      ],
+      "default": "NOIR_ABSOLU_OR_SACRE",
+      "description": "Th\u00e8me dynastique choisi"
+    },
+    "onboarding_completed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Onboarding profond compl\u00e9t\u00e9"
+    },
+    "onboarding_step": {
+      "type": "integer",
+      "default": 1,
+      "description": "\u00c9tape d'onboarding en cours"
+    },
+    "soul_archaeology": {
+      "type": "string",
+      "description": "Arch\u00e9ologie de l'\u00e2me \u2014 r\u00e9ponse s\u00e9mantique profonde"
+    },
+    "dominant_wounds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Blessures dominantes identifi\u00e9es"
+    },
+    "monthly_income": {
+      "type": "number",
+      "description": "Revenus mensuels fixes (\u20ac)"
+    },
+    "total_debt": {
+      "type": "number",
+      "description": "Totalit\u00e9 des dettes actives (\u20ac)"
+    },
+    "current_savings": {
+      "type": "number",
+      "description": "\u00c9pargne de s\u00e9curit\u00e9 actuelle (\u20ac)"
+    },
+    "weekly_work_hours": {
+      "type": "number",
+      "description": "Heures hebdomadaires r\u00e9elles allou\u00e9es au travail civil"
+    },
+    "weight_kg": {
+      "type": "number",
+      "description": "Poids r\u00e9el (kg)"
+    },
+    "avg_sleep_hours": {
+      "type": "number",
+      "description": "Moyenne d'heures de sommeil par nuit"
+    },
+    "era": {
+      "type": "string",
+      "enum": [
+        "AN_I",
+        "AN_II",
+        "AN_III"
+      ],
+      "default": "AN_I",
+      "description": "\u00c8re de croissance actuelle dans le plan 3 ans"
+    }
+  },
+  "required": [
+    "user_id"
+  ]
+}
