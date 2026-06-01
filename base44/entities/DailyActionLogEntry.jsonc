@@ -1,0 +1,67 @@
+{
+  "name": "DailyActionLogEntry",
+  "type": "object",
+  "properties": {
+    "action_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date de l'action"
+    },
+    "pillar": {
+      "type": "string",
+      "enum": [
+        "spiritual",
+        "financial",
+        "emotional",
+        "physical",
+        "time_management",
+        "relational",
+        "identity_vocation"
+      ],
+      "description": "Pilier concern\u00e9"
+    },
+    "title": {
+      "type": "string",
+      "description": "Titre de l'action"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description de l'action r\u00e9alis\u00e9e"
+    },
+    "time_spent_minutes": {
+      "type": "integer",
+      "description": "Temps pass\u00e9 en minutes"
+    },
+    "progress_percentage": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Pourcentage de progression de cette action"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "in_progress",
+        "completed",
+        "cancelled"
+      ],
+      "default": "completed",
+      "description": "Statut de l'action"
+    },
+    "linked_goal_id": {
+      "type": "string",
+      "description": "ID de l'objectif li\u00e9"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes compl\u00e9mentaires"
+    }
+  },
+  "required": [
+    "action_date",
+    "pillar",
+    "title",
+    "status"
+  ]
+}

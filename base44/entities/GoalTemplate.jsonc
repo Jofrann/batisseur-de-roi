@@ -1,0 +1,56 @@
+{
+  "name": "GoalTemplate",
+  "type": "object",
+  "properties": {
+    "pillar": {
+      "type": "string",
+      "enum": [
+        "spiritual",
+        "financial",
+        "emotional",
+        "physical",
+        "time_management",
+        "relational",
+        "identity_vocation"
+      ],
+      "description": "Pilier concern\u00e9"
+    },
+    "title": {
+      "type": "string",
+      "description": "Titre de l'objectif template"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description d\u00e9taill\u00e9e de l'objectif"
+    },
+    "suggested_duration_months": {
+      "type": "integer",
+      "description": "Dur\u00e9e sugg\u00e9r\u00e9e en mois"
+    },
+    "suggested_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Actions types sugg\u00e9r\u00e9es"
+    },
+    "difficulty_level": {
+      "type": "string",
+      "enum": [
+        "facile",
+        "moyen",
+        "difficile"
+      ],
+      "description": "Niveau de difficult\u00e9"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Template actif ou archiv\u00e9"
+    }
+  },
+  "required": [
+    "pillar",
+    "title"
+  ]
+}

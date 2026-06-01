@@ -1,0 +1,51 @@
+{
+  "name": "DailyJournalEntry",
+  "type": "object",
+  "properties": {
+    "entry_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date de l'entr\u00e9e du journal"
+    },
+    "pillar": {
+      "type": "string",
+      "enum": [
+        "spiritual",
+        "financial",
+        "emotional",
+        "physical",
+        "time_management",
+        "relational",
+        "identity_vocation"
+      ],
+      "description": "Pilier concern\u00e9 par cette entr\u00e9e"
+    },
+    "mood_score": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "description": "Score d'humeur du jour (1-10)"
+    },
+    "content": {
+      "type": "string",
+      "description": "R\u00e9flexion qualitative du jour"
+    },
+    "blockers": {
+      "type": "string",
+      "description": "Points de blocage identifi\u00e9s"
+    },
+    "gratitude": {
+      "type": "string",
+      "description": "Points de gratitude du jour"
+    },
+    "linked_goal_id": {
+      "type": "string",
+      "description": "ID de l'objectif li\u00e9 \u00e0 cette entr\u00e9e"
+    }
+  },
+  "required": [
+    "entry_date",
+    "pillar",
+    "content"
+  ]
+}
